@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio Website</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/8ed73276d3.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="header">
+        <div class="containter">
+            <nav>
+                <img src="images/logo2.0.png" class="logo">
+                <ul id="sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Experience</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <i class="fas fa-times" onclick="closemenu()"></i>
+                </ul>
+                <i class="fas fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text">
+                <p>Software Engineer</p>
+                <h1>Jaden Thomas</h1>
+            </div>
+        </div>
+        <!------------about------------>
+    </div>
+    <div id="about">
+        <div class="containter">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="images/download (22).png">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>Hi, I'm Jaden, a Software Engineer living in Chandler, Arizona. I have
+                        experience in multiple fields of technology from designing web-pages to
+                        implementing data structures and algorithms.
+                        <br><br> I'm passionate about cutting-edge technologies, and perfectly
+                        designed codebases
+                    </p>
+
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>Programming</span><br>Software Engineering</li>
+                            <li><span>UI/UX</span><br>Web Designing</li>
+                            <li><span>Hardware</span><br>Computer Orginization</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>College</span><br>Arizona State Univerity</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!------------------SERVICES------------------->
+    <div id="services">
+        <div class="containter">
+            <h1 class="sub-title">Technologies I've Worked With</h1>
+            <div class="services-list">
+                <img src="/images/1200px-C_Programming_Language.svg.png">
+                <img src="/images/ISO_C++_Logo.svg.png">
+                <img src="/images/python-logo-vector.svg" alt="">
+                <img src="/images/java-logo-vector-2.svg">
+                <img src="/images/javascript-logo-vector.svg">
+                <img src="/images/html5-logo-vector.svg" alt="">
+                <img src="/images/css3-logo-vector.svg" alt="">
+                <img class="github" src="/images/github-logo-vector.svg" alt="">
+                <img src="/images/linux-tux-logo-vector-1.svg" alt="">
+                <img src="/images/ubuntu-logo-vector.svg" alt="">
+                <img src="/images/microsoft-windows-logo-vector.svg" alt="">
+            </div>
+        </div>
+    </div>
+
+    <!----------------Portfolio------------->
+
+    <div id="portfolio">
+        <div class="containter">
+            <h1 class="sub-title">My Projects</h1>
+            <div class="work-list">
+                <div class="work">
+                    <img src="images/Proj1(1).png">
+                    <div class="layer">
+                        <h3>Wavefront Pathfinder</h3>
+                        <p>Pathfinding algorithm utilizing 2D arrays and moores neighborhood</p>
+                        <a href="#"><i class="fa-solid fa-link"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="images/Proj2(2).png">
+                    <div class="layer">
+                        <h3>Zombie Conga Party</h3>
+                        <p>An application featuring creation and implementation of a doubly linked list, formatting colored results, custom exception handling, and text I/O </p>
+                        <a href="#"><i class="fa-solid fa-link"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!---------contact------->
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 classes="sub-title">Contact Me</h1>
+                    <p><i class="fa-solid fa-paper-plane"></i></i> jadent183@gmail.com</p>
+                    <p><i class="fa-solid fa-phone"></i> (480) 789-0436</p>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/jaden-thomas-1b1307187/"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://github.com/Jadent183"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://www.instagram.com/jaden_m_thomas/"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                    <a href="images/Jaden's Resume.pdf" download class="btn btn2">Download Resume</a>
+                </div>
+                <div class="contact-right">
+                    <form name="submit-to-google-sheet">
+                        <input type="text" name="Name" id="Name" placeholder="Your Name" required>
+                        <input type="text" name="Email" id="Email" placeholder="Your Email" required>
+                        <textarea name="Message" id="Message" rows="6" placeholder="Your Message"></textarea>
+                        <button type="submit" class="btn btn2">Submit</button>
+                    </form>
+                    <span id="msg"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+
+        function opentab(tabname) {
+            for (tablink of tablinks) {
+                tablink.classList.remove("active-link");
+            }
+            for (tabcontent of tabcontents) {
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+
+        }
+
+    </script>
+
+    <script>
+
+        var sidemenu = document.getElementById("sidemenu");
+
+        function openmenu() {
+            sidemenu.style.right = "0";
+        }
+        function closemenu() {
+            sidemenu.style.right = "-200px";
+        }
+
+    </script>
+
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbyXUVsJioDoVN46_aeePbqH3ksyoeUoZ7uaR0TAM2mKqKJlKzgBoM9RmWYLIjPbVJO-/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg = document.getElementById("msg")
+
+
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(response => {
+                    msg.innerHTML = "Message Sent Successfully!"
+                    setTimeout(function () {
+                        msg.innerHTML = ""
+                    }, 5000)
+                    form.reset()
+                })
+                .catch(error => console.error('Error!', error.message))
+            sendEmail()
+            reset()
+        })
+    </script>
+
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+        function sendEmail() {
+            Email.send({
+                SecureToken: "b1fa3b96-0d1a-4a89-8ff1-0bead8588b3f",
+                To: 'jadent183@gmail.com',
+                From: document.getElementById("Email").value,
+                Subject: "New Contact Form",
+                Body: "Name: " + document.getElementById("Name").value
+                    + "<br> Email: " + document.getElementById("Email").value
+                    + "<br> <br> Message: " + document.getElementById("Message").value
+            });
+        }
+    </script>
+</body>
+
+</html>
