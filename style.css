@@ -383,7 +383,7 @@ nav .fas {
 
 @media only screen and (max-width: 600px) {
     #header {
-        background-image: url(/images/download\ \(11\)update.png);
+        background-image: url("assets/images/background.png");
         background-position: right;
     }
 
