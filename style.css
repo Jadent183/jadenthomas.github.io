@@ -424,6 +424,15 @@ nav .fas {
         left: 25px;
         cursor: pointer;
     }
+    
+    .services-list {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(100px, 1px));
+        grid-gap: 140px;
+        margin-top: 90px;
+        font-size: 70px;
+        color: #b54769;
+    }
 
     .sub-title {
         font-size: 40px;
