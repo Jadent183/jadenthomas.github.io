@@ -36,7 +36,7 @@
         <div class="containter">
             <div class="row">
                 <div class="about-col-1">
-                    <img src="assets/images/download (22).png">
+                    <img src="JadenThomas_Technology.JPG">
                 </div>
                 <div class="about-col-2">
                     <h1 class="sub-title">About Me</h1>
@@ -81,11 +81,12 @@
     </div>
 
     <!------------------SERVICES------------------->
-    <div id="services">
+    <!-- <div id="services">
         <div class="containter">
             <h1 class="sub-title">Technologies I've Worked With</h1>
             <div class="services-list">
                 <img src="assets/images/1200px-C_Programming_Language.svg.png">
+                <img src="assets/images/c--4.svg">
                 <img src="assets/images/ISO_C++_Logo.svg.png">
                 <img src="assets/images/python-logo-vector.svg" alt="">
                 <img src="assets/images/java-logo-vector-2.svg">
@@ -101,7 +102,7 @@
                 <img src="assets/images/chatgpt-icon.svg" alt="">
             </div>
         </div>
-    </div>
+    </div> -->
 
     <!----------------Portfolio------------->
 
@@ -110,13 +111,35 @@
             <h1 class="sub-title">My Projects</h1>
             <div class="work-list">
                 <div class="work">
-                    <img src="assets/images/Proj1(1).png">
+                    <img src="assets/images/PrepMate.png">
                     <div class="layer">
-                        <h3>Wavefront Pathfinder</h3>
-                        <p>A pathfinding program that utilizes a Breadth-First search algorithm to
-                            avoid walls and find the shortest route within a 2D array from a user-defined
-                            starting point to a user-defined ending point</p>
-                        <a href="#"><i class="fa-solid fa-link"></i></a>
+                        <h3>PrepMate</h3>
+                        <p>An AI-powered recipe generation web app that allows you to provide ingredients or pictures of ingredients and generate recipes complete with nutrition facts and cooking steps</p>
+                        <a href="https://github.com/Jadent183/PrepMate-mlh" target="_blank"><i class="fa-solid fa-link"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="assets/images/MacroScan.png">
+                    <div class="layer">
+                        <h3>SnackTrackr</h3>
+                        <p>A calorie tracking dashboard which allows you to scan barcodes or input individual items and get the nutrition information for tracking daily/weekly calorie intake</p>
+                        <a href="https://github.com/Jadent183/SnackTrackr" target="_blank"><i class="fa-solid fa-link"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="assets/images/c++parser.png">
+                    <div class="layer">
+                        <h3>PredictaParse</h3>
+                        <p>A C++ predictive descent parser which recognizes a customized programming language</p>
+                        <a href="https://github.com/Jadent183/CSE-340-Predictive-Descent-Parser" target="_blank"><i class="fa-solid fa-link"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="assets/images/2dGameEngine.png">
+                    <div class="layer">
+                        <h3>GameCrafter++</h3>
+                        <p>A C++ customizable game creation tool which allows you to create and play your own 2D custom console game</p>
+                        <a href="https://github.com/Jadent183/GameCrafter" target="_blank"><i class="fa-solid fa-link"></i></a>
                     </div>
                 </div>
                 <div class="work">
@@ -125,7 +148,7 @@
                         <h3>Zombie Conga Party</h3>
                         <p>An application featuring creation and implementation of a doubly linked list,
                             formatting colored results, custom exception handling, and text I/O </p>
-                        <a href="#"><i class="fa-solid fa-link"></i></a>
+                        <a href="https://github.com/Jadent183/Zombie-Conga" target="_blank"><i class="fa-solid fa-link"></i></a>
                     </div>
                 </div>
             </div>
@@ -144,7 +167,7 @@
                                 class="fa-brands fa-linkedin"></i></a>
                         <a href="https://github.com/Jadent183" target="_blank"><i class="fa-brands fa-github"></i></a>
                     </div>
-                    <a href="assets/images/JadensResume.pdf" download class="btn btn2">Download Resume</a>
+                    <a href="assets/images/JadenThomasResume.pdf" download class="btn btn2">Download Resume</a>
                 </div>
                 <div class="contact-right">
                     <form name="submit-to-google-sheet">
@@ -191,26 +214,50 @@
         }
 
     </script>
-
     <script>
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbyXUVsJioDoVN46_aeePbqH3ksyoeUoZ7uaR0TAM2mKqKJlKzgBoM9RmWYLIjPbVJO-/exec'
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbxzNW30ZeDv_2u2SQWl0S3KpNTtZC_yBqC62N45SoFrsxa-SxWmIkEEzXkTKOBfUs9fAQ/exec'
         const form = document.forms['submit-to-google-sheet']
         const msg = document.getElementById("msg")
 
-
         form.addEventListener('submit', e => {
             e.preventDefault()
-            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-                .then(response => {
-                    msg.innerHTML = "Message Sent Successfully!"
-                    setTimeout(function () {
-                        msg.innerHTML = ""
-                    }, 5000)
-                    form.reset()
-                })
-                .catch(error => console.error('Error!', error.message))
-            sendEmail()
-            reset()
+            msg.innerHTML = "Sending message..."
+            
+            fetch(scriptURL, { 
+                method: 'POST', 
+                body: new FormData(form),
+                mode: 'cors'
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`)
+                }
+                return response.text()  // Change to text() instead of json()
+            })
+            .then(text => {
+                try {
+                    const data = JSON.parse(text)
+                    if (data.result === 'success') {
+                        msg.innerHTML = "Message Sent Successfully!"
+                        form.reset()
+                        sendEmail()
+                    } else {
+                        throw new Error(data.error || 'Submission failed')
+                    }
+                } catch (e) {
+                    console.error('Parsing error:', e, 'Response text:', text)
+                    throw new Error('Invalid response format')
+                }
+            })
+            .catch(error => {
+                console.error('Error details:', error)
+                msg.innerHTML = `Error sending message: ${error.message}. Please try again.`
+            })
+            .finally(() => {
+                setTimeout(() => {
+                    msg.innerHTML = ""
+                }, 5000)
+            })
         })
     </script>
 
@@ -225,7 +272,11 @@
                 Body: "Name: " + document.getElementById("Name").value
                     + "<br> Email: " + document.getElementById("Email").value
                     + "<br> <br> Message: " + document.getElementById("Message").value
-            });
+            }).then(
+                message => console.log("Email sent successfully")
+            ).catch(
+                error => console.error("Error sending email:", error)
+            );
         }
     </script>
 </body>
