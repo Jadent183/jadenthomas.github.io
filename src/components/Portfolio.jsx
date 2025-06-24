@@ -8,6 +8,7 @@ import parserImg from '/src/assets/images/c++parser.png';
 import gameCrafterImg from '/src/assets/images/2dGameEngine.png';
 import prepMateImg from '/src/assets/images/PrepMate.png';
 import intelliNotes from '/src/assets/images/IntelliNotes2.png';
+import pharminiImg from 'src/assets/images/PharminiMascotLookWob.png';
 
 
 
@@ -120,6 +121,12 @@ const Portfolio = () => {
       image: gameCrafterImg,
       description: "A C++ customizable game creation tool which allows you to create and play your own 2D custom console game",
       link: "https://github.com/Jadent183/GameCrafter"
+    },
+    {
+      title: "Phar-Mini",
+      image: pharminiImg,
+      description: "A simulation strategy game designed to teach industrial engineering students about medical infrastructure and resource management",
+      link: "https://jadent183.itch.io/phar-mini"
     }
   ];
 
