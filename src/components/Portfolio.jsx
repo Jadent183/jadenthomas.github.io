@@ -8,7 +8,7 @@ import parserImg from '/src/assets/images/c++parser.png';
 import gameCrafterImg from '/src/assets/images/2dGameEngine.png';
 import prepMateImg from '/src/assets/images/PrepMate.png';
 import intelliNotes from '/src/assets/images/IntelliNotes2.png';
-import pharminiImg from 'src/assets/images/PharminiMascotLookWob.png';
+import pharminiImg from '/src/assets/images/PharminiMascotLookWob.png';
 
 
 
