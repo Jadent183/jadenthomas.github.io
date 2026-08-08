@@ -1,8 +1,18 @@
-# React + Vite
+# jadenthomas.github.io
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Personal portfolio site for Jaden Thomas — live at [jadent183.github.io/jadenthomas.github.io](https://jadent183.github.io/jadenthomas.github.io/).
 
-Currently, two official plugins are available:
+Built with React, Vite, and Tailwind CSS. Deployed to GitHub Pages automatically on every push to `master` (see `.github/workflows/master.yml`).
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Local development
+
+```
+npm install
+npm run dev
+```
+
+## Build
+
+```
+npm run build
+```
